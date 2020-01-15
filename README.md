@@ -1,8 +1,10 @@
 # Algorithm101
 
+###### tags: Algorithm101
+
 ## Sorting
 
-- [ ] Merge sort (100 days: 67)
+- [x] Merge sort (100 days: 67)
 - [ ] Quick sort (100 days: 57)
 - [ ] Topological sort (100 days: 81)
 
