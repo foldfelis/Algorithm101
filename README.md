@@ -46,8 +46,13 @@
 - [ ] Linear regression with gradient descent
 - [ ] Conjugate gradient method
 - [ ] Logistic regression with IRLS (100 days: 79)
+- [ ] Markov chain
+- [ ] Hidden Markov model ([ref](http://www.csie.ntnu.edu.tw/~u91029/HiddenMarkovModel.html#2))
+- [ ] K nearest neighbor classifier
 - [ ] K-means (100 days: 21)
 - [ ] Principle component analysis (100 days: 92)
+- [ ] Naive Bayes classifier
+- [ ] Decision tree classifier (ID3)
 
 ## Applications
 
