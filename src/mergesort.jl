@@ -26,6 +26,22 @@ end
 
 function merge(arr1::Vector, arr2::Vector)
     # TODO:　Implement merge
-    
-    return (append!(arr1, arr2))
+    merged = []
+
+    while !(isempty(arr1) || isempty(arr2))
+        if arr1[1] <= arr2[1]
+            push!(merged, popfirst!(arr1))
+        else
+            push!(merged, popfirst!(arr2))
+        end
+    end
+
+    if !isempty(arr1)
+        append!(merged, arr1)
+    end
+    if !isempty(arr2)
+        append!(merged, arr2)
+    end
+
+    return merged
 end
