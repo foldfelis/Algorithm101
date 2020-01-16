@@ -9,7 +9,7 @@ print(@test merge_sort([4,6,5,7,1,3,2]) == answer)
 println(" : $(answer)\n")
 
 @info "Test: 100 elements Vector"
-data = rand(Float32, 100)
+data = rand(100)
 answer = sort(data)
 print(@test merge_sort(data) == answer)
 println(" : $(answer)\n")

@@ -1,31 +1,25 @@
 function merge_sort(array::Vector)
-    divided = divide(array)
-
-    if length(divided) > 1
+    if length(array) > 1
+        divided = divide(array)
         merged1 = merge_sort(divided[1])
         merged2 = merge_sort(divided[2])
-
         merged = merge(merged1, merged2)
     else
-        merged = divided
+        merged = array
     end
 
     return merged
 end
 
 function divide(array::Vector)
-    if length(array) > 1
-        split = trunc(Int64, length(array)/2)
-        arr1 = array[1:split]
-        arr2 = array[split+1:end]
-        return (arr1, arr2)
-    end
-
-    return array
+    split = trunc(Int64, length(array)/2)
+    arr1 = array[1:split]
+    arr2 = array[split+1:end]
+    
+    return (arr1, arr2)
 end
 
 function merge(arr1::Vector, arr2::Vector)
-    # TODO:　Implement merge
     merged = []
 
     while !(isempty(arr1) || isempty(arr2))
