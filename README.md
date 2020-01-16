@@ -1,6 +1,6 @@
 # Algorithm101
 
-###### tags: Algorithm101
+###### tags: `Algorithm101`
 
 ## Sorting
 
