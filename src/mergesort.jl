@@ -4,18 +4,18 @@ function merge_sort(array::Vector)
         merged1 = merge_sort(divided[1])
         merged2 = merge_sort(divided[2])
         merged = merge(merged1, merged2)
-    else
-        merged = array
+
+        return merged
     end
 
-    return merged
+    return array
 end
 
 function divide(array::Vector)
     split = trunc(Int64, length(array)/2)
     arr1 = array[1:split]
     arr2 = array[split+1:end]
-    
+
     return (arr1, arr2)
 end
 
