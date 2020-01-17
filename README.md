@@ -5,7 +5,7 @@
 ## Sorting
 
 - [x] Merge sort (100 days: 67)
-- [ ] Quick sort (100 days: 57)
+- [x] Quick sort (100 days: 57)
 - [ ] Topological sort (100 days: 81)
 
 ## Searching
