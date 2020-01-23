@@ -1,12 +1,16 @@
 module Algorithm101
-    import Base: push!, length
+    import Base: push!, length, pushfirst!, deleteat!
 
     export
+    # MergeSort
+    merge_sort,
 
-    merge_sort
+    # QuickSort
+    quick_sort!
 
     filename = [
         "mergesort",
+        "quicksort",
     ]
 
     for f in filename

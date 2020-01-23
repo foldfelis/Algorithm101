@@ -3,6 +3,7 @@ using Test
 
 filename = [
     "mergesort",
+    "quicksort",
 ]
 
 for f in filename
