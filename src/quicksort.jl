@@ -1,23 +1,25 @@
-function quick_sort(arr::Vector)
-    len = length(arr)
-    if len < 2 return arr end
-
-    pivote = 1
-    i = 2
-    while i <= len
-        data = arr[i]
-        if data < arr[pivote]
-            deleteat!(arr, i)
-            pushfirst!(arr, data)
-            pivote += 1
-        else
-            i += 1
-        end
+function quick_sort(arr::Vector, h::Int64, t::Int64)
+    len = t-h+1
+    if len < 2
+        return arr
     end
 
-    arr1 = quick_sort(arr[1:pivote])
-    arr2 = quick_sort(arr[pivote+1:end])
-    arr = append!(arr1, arr2)
+    n, i = h, h
+    pivot = arr[t]
+    while n <= t
+        if arr[n] <= pivot
+            arr[i], arr[n] = arr[n], arr[i]
+            i += 1
+        end
+        n += 1
+    end
+
+    if i > t
+        i = t
+    end
+
+    arr = quick_sort(arr, h, i-1)
+    arr = quick_sort(arr, i, t)
 
     return arr
 end
