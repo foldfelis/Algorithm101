@@ -6,7 +6,7 @@ module Algorithm101
     merge_sort,
 
     # QuickSort
-    quick_sort
+    quick_sort!
 
     filename = [
         "mergesort",
