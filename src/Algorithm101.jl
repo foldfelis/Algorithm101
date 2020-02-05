@@ -6,11 +6,15 @@ module Algorithm101
     merge_sort,
 
     # QuickSort
-    quick_sort!
+    quick_sort!,
+
+    # BinarySearch
+    binary_search
 
     filename = [
         "mergesort",
         "quicksort",
+        "binarysearch",
     ]
 
     for f in filename

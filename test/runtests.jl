@@ -4,6 +4,7 @@ using Test
 filename = [
     "mergesort",
     "quicksort",
+    "binarysearch",
 ]
 
 for f in filename
