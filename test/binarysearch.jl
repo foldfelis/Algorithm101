@@ -16,3 +16,4 @@ target = 6
 @info "Target: $(target), and is not in the array"
 find_i = binary_search(array, target)
 @info "Can't find and return index: $(find_i)"
+println(@test -1 == find_i)

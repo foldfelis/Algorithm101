@@ -12,4 +12,6 @@ function binary_search(array::Vector{T}, target::T) where T
             return mid
         end
     end
+
+    return -1
 end
