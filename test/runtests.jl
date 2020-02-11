@@ -8,10 +8,11 @@ filename = [
 ]
 
 for f in filename
-    @info "\n
-        ##########\n
-        $(f)\n
-        ##########"
+    teststr = "# Test '$(f)' #"
+    len = length(teststr)
+    teststr = "\n$("#"^len)\n$(teststr)\n$("#"^len)\n"
+    @info teststr
+
     fname = string(f, ".jl")
     include(fname)
 end
