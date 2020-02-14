@@ -1,4 +1,4 @@
-@testset "Test QuickSort" begin
+@testset "Test MergeSort" begin
 
     # Test: 1 elements Vector
     answer = [0]

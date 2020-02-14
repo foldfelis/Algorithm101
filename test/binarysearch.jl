@@ -1,4 +1,4 @@
-@testset "Test QuickSort" begin
+@testset "Test BinarySearch" begin
 
     # Test: 1:7:1000 sorted array
     array = collect(1:7:1000)
