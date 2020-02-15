@@ -8,7 +8,6 @@
 
     # Test: If element is not in the array
     target = 6
-    find_i =
     @test binary_search(array, target) == -1
 
 end
