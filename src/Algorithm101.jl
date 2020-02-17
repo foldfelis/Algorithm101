@@ -15,7 +15,8 @@ module Algorithm101
 
     # TreeTraverse
     preorder,
-    inorder
+    inorder,
+    posorder
 
 
     filename = [

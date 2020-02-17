@@ -17,3 +17,14 @@ function inorder(node::TreeNode{T}, result::Vector{T}=T[]) where T
 end
 
 inorder(node::NullNode, result::Vector{T}=T[]) where T = result
+
+
+function posorder(node::TreeNode{T}, result::Vector{T}=T[]) where T
+    posorder(leftchild(node), result)
+    posorder(rightchild(node), result)
+    push!(result, value(node))
+
+    return result
+end
+
+posorder(node::NullNode, result::Vector{T}=T[]) where T = result
