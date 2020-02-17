@@ -30,7 +30,7 @@
 
 - [ ] Kruskal's algorithm (Minimum spanning tree)
 - [ ] Prim's algorithm (Minimum spanning tree)
-- [ ] Tree traverse: pre-order, in-order, post-order
+- [x] Tree traverse: pre-order, in-order, post-order
 - [ ] JSON Parser
 
 ## Graph
