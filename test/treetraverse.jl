@@ -7,6 +7,6 @@
         push!(bt, i)
     end
     @test preorder(root(bt)) == [1,2,4,8,9,5,10,3,6,7]
-
+    @test inorder(root(bt)) == [8,4,9,2,10,5,1,6,3,7]
 
 end

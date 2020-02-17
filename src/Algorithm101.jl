@@ -14,7 +14,8 @@ module Algorithm101
     binary_search,
 
     # TreeTraverse
-    preorder
+    preorder,
+    inorder
 
 
     filename = [
