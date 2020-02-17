@@ -5,7 +5,7 @@ uuid = "2a0f44e3-6c83-55bd-87e4-b1978d98bd5f"
 
 [[DataStructure101]]
 deps = ["Test"]
-git-tree-sha1 = "9a27bd723a59c86a69f8b22c4360ce8c1ff287f3"
+git-tree-sha1 = "631a71f9f3877380e5d0288c3b52972ae3687389"
 repo-rev = "master"
 repo-url = "/home/n/Documents/GitHub/DataStructure101"
 uuid = "0056bbaa-36c9-436f-bac2-baeddaff1525"

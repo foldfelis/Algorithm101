@@ -7,6 +7,7 @@ filename = [
     "quicksort",
     "binarysearch",
     "treetraverse",
+    "binarysearchtree",
 ]
 
 for f in filename
