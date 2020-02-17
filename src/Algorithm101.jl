@@ -1,5 +1,7 @@
 module Algorithm101
     import Base: push!, length, pushfirst!, deleteat!
+    using DataStructure101: value, BinaryTree, root, TreeNode, NullNode,
+        leftchild, rightchild
 
     export
     # MergeSort
@@ -9,12 +11,17 @@ module Algorithm101
     quick_sort!,
 
     # BinarySearch
-    binary_search
+    binary_search,
+
+    # TreeTraverse
+    preorder
+
 
     filename = [
         "mergesort",
         "quicksort",
         "binarysearch",
+        "treetraverse",
     ]
 
     for f in filename

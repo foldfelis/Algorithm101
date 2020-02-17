@@ -1,10 +1,12 @@
 using Algorithm101
+using DataStructure101: BinaryTree, root
 using Test
 
 filename = [
     "mergesort",
     "quicksort",
     "binarysearch",
+    "treetraverse",
 ]
 
 for f in filename
