@@ -11,7 +11,7 @@
 ## Searching
 
 - [x] Binary search (100 days: 08)
-- [ ] Binary search tree (100 days: 45)
+- [x] Binary search tree (100 days: 45)
 
 ## Approximation
 

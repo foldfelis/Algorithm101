@@ -1,5 +1,6 @@
 module Algorithm101
-    import Base: push!, length, pushfirst!, deleteat!
+    import Base: push!, length, pushfirst!, deleteat!, insert!,
+        maximum, minimum, getindex
     using DataStructure101: value, BinaryTree, root, TreeNode, NullNode,
         leftchild, rightchild
 
@@ -16,14 +17,20 @@ module Algorithm101
     # TreeTraverse
     preorder,
     inorder,
-    posorder
+    posorder,
 
+    # BinarySearchTree
+    insert!,
+    maximum,
+    minimum,
+    getindex
 
     filename = [
         "mergesort",
         "quicksort",
         "binarysearch",
         "treetraverse",
+        "binarysearchtree",
     ]
 
     for f in filename
