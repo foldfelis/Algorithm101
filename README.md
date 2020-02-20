@@ -1,5 +1,8 @@
 # Algorithm101
 
+[![Build Status](https://travis-ci.com/foldfelis/Algorithm101.svg?token=sCvSBz8RcnVXPVQx1yrZ&branch=master)](https://travis-ci.com/foldfelis/Algorithm101)
+[![codecov](https://codecov.io/gh/foldfelis/Algorithm101/branch/master/graph/badge.svg?token=PBJZ4JLZ1H)](https://codecov.io/gh/foldfelis/Algorithm101)
+
 ###### tags: `Algorithm101`
 
 ## Sorting
