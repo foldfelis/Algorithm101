@@ -20,6 +20,7 @@ module Algorithm101
     posorder,
 
     # BinarySearchTree
+    find,
     insert!,
     maximum,
     minimum,

@@ -48,4 +48,4 @@ function insert!(bt::BinaryTree{T}, data::Pair{Int64,T}) where T
     end
 end
 
-getindex(bt::BinaryTree{T}, k::Int) where T = value(find(root(bt), k))
+# getindex(bt::BinaryTree{T}, k::Int) where T = value(find(root(bt), k))

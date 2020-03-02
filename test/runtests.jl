@@ -1,5 +1,5 @@
 using Algorithm101
-using DataStructure101: BinaryTree, root
+using DataStructure101: BinaryTree, root, value
 using Test
 
 filename = [

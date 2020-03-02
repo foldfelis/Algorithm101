@@ -15,18 +15,16 @@ using Random: shuffle
     )
     shuffled_index = shuffle(1:10)
     # shuffled_index = [3,5,1,8,4,9,2,10,6,7]
-    @show shuffled_index
 
     bt = BinaryTree{String}(data[shuffled_index[1]], shuffled_index[1])
     for index in shuffled_index[2:end]
         insert!(bt, index => data[index])
     end
-    println(bt)
 
     @test maximum(bt) == (10 => "German")
     @test minimum(bt) == (1 => "Chinese")
     for i in shuffled_index
-        @test bt[i] == data[i]
+        @test value(find(root(bt), i)) == data[i]
     end
 
 end
