@@ -2,7 +2,7 @@ module Algorithm101
     import Base: push!, length, pushfirst!, deleteat!, insert!,
         maximum, minimum, getindex
     using DataStructure101: value, BinaryTree, root, TreeNode, NullNode,
-        leftchild, rightchild, Graph, neighbor
+        leftchild, rightchild, Graph, neighbor, nv
 
     export
     # MergeSort
@@ -27,7 +27,11 @@ module Algorithm101
     getindex,
 
     # BFS
-    bfs
+    bfs,
+
+    # TopologicalSort
+    findentrances,
+    topologicalsort
 
     filename = [
         "mergesort",
@@ -36,6 +40,7 @@ module Algorithm101
         "treetraverse",
         "binarysearchtree",
         "bfs",
+        "topologicalsort",
     ]
 
     for f in filename

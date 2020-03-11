@@ -10,6 +10,7 @@ filename = [
     "treetraverse",
     "binarysearchtree",
     "bfs",
+    "topologicalsort",
 ]
 
 for f in filename
