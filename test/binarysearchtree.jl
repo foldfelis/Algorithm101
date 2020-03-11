@@ -1,4 +1,6 @@
+using DataStructure101: NullNode
 using Random: shuffle
+
 @testset "Binary Search Tree" begin
 
     data = Dict(
@@ -26,5 +28,7 @@ using Random: shuffle
     for i in shuffled_index
         @test value(find(root(bt), i)) == data[i]
     end
+
+    @test find(NullNode(), 11) == nothing
 
 end
