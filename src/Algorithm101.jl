@@ -27,7 +27,10 @@ module Algorithm101
     getindex,
 
     # BFS
-    bfs
+    bfs,
+
+    # DFS
+    dfs
 
     filename = [
         "mergesort",
@@ -36,6 +39,7 @@ module Algorithm101
         "treetraverse",
         "binarysearchtree",
         "bfs",
+        "dfs",
     ]
 
     for f in filename
