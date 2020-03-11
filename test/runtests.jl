@@ -1,5 +1,6 @@
 using Algorithm101
-using DataStructure101: BinaryTree, root, value
+using DataStructure101: BinaryTree, root, value, WeightedAdjacencyMatrix,
+    AdjacencyMatrix, relate!
 using Test
 
 filename = [
@@ -8,6 +9,7 @@ filename = [
     "binarysearch",
     "treetraverse",
     "binarysearchtree",
+    "bfs",
 ]
 
 for f in filename
