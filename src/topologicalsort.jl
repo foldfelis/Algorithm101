@@ -1,12 +1,25 @@
+function calc_in_degree(g::Graph)
+    in_degrees = zeros(nv(g))
+
+    for v = 1:nv(g)
+        for n in neighbor(g, v)
+            in_degrees[n] += 1
+        end # for
+    end # for
+
+    return in_degrees
+end
+
 function findentrances(g::Graph)
-    vs = collect(1:nv(g))
-    entrances = collect(1:nv(g))
-    for v in vs
-        entrances = filter!(e -> !(e in neighbor(g, v)), entrances)
-    end
+    entrances = Int[]
+    
+    in_degrees = calc_in_degree(g)
+    for (v, in_degree) in enumerate(in_degrees)
+        in_degree == 0 && push!(entrances, v)
+    end # for
 
     return entrances
-end
+end # function
 
 function topologicalsort(g::Graph)
     sorted = Int[]
