@@ -14,10 +14,10 @@
     relate!(g, 7, 2)
     relate!(g, 6, 1)
 
-    @test dfs(g, 10, Int[]) == [10, 8, 4, 5, 9, 6, 1, 7, 2, 3]
+    @test dfs(g, 10) == [10, 8, 4, 5, 9, 6, 1, 7, 2, 3]
 
     n = 100
     city = WeightedAdjacencyMatrix{Float64}(n=n, random_g=true)
-    @test dfs(city, 1, Int[]) == collect(1:100)
+    @test dfs(city, 1) == collect(1:100)
 
 end
