@@ -29,6 +29,9 @@ module Algorithm101
     # BFS
     bfs,
 
+    # DFS
+    dfs,
+
     # TopologicalSort
     findentrances,
     topologicalsort
@@ -40,6 +43,7 @@ module Algorithm101
         "treetraverse",
         "binarysearchtree",
         "bfs",
+        "dfs",
         "topologicalsort",
     ]
 
