@@ -11,6 +11,7 @@ filename = [
     "binarysearchtree",
     "bfs",
     "dfs",
+    "topologicalsort",
 ]
 
 for f in filename
