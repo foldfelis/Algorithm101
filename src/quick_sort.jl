@@ -1,3 +1,5 @@
+export quick_sort!
+
 function quick_sort!(arr::Vector, h::Int64, t::Int64)
     len = t-h+1
     if len < 2

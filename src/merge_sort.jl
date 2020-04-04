@@ -1,3 +1,5 @@
+export merge_sort
+
 function merge_sort(array::Vector)
     if length(array) > 1
         divided = divide(array)

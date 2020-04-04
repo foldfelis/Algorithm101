@@ -1,3 +1,5 @@
+export binary_search
+
 function binary_search(array::Vector{T}, target::T) where T
     left = 1
     right = length(array)

@@ -1,7 +1,12 @@
-function dfs!(g::Graph, v::Int64, traversed::Vector{Int64}=Int[])
+using DataStructure101
+const DS = DataStructure101
+
+export dfs
+
+function dfs!(g::DS.Graph, v::Int64, traversed::Vector{Int64}=Int[])
     push!(traversed, v)
 
-    neighbors = neighbor(g, v)
+    neighbors = DS.neighbor(g, v)
     for n in neighbors
         !(n in traversed) && dfs!(g, n, traversed)
     end
@@ -9,4 +14,4 @@ function dfs!(g::Graph, v::Int64, traversed::Vector{Int64}=Int[])
     return traversed
 end
 
-dfs(g::Graph, v::Int64) = dfs!(g, v)
+dfs(g::DS.Graph, v::Int64) = dfs!(g, v)

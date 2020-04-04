@@ -1,4 +1,9 @@
-function bfs(g::Graph, v::Int64)
+using DataStructure101
+const DS = DataStructure101
+
+export bfs
+
+function bfs(g::DS.Graph, v::Int64)
     traversed = Int[]
     queue = Int[]
     push!(queue, v)
@@ -7,7 +12,7 @@ function bfs(g::Graph, v::Int64)
         current_v = queue[1]
         push!(traversed, popfirst!(queue))
 
-        neighbors = neighbor(g, current_v)
+        neighbors = DS.neighbor(g, current_v)
         for n in neighbors
             if !(n in traversed || n in queue) push!(queue, n) end
         end
