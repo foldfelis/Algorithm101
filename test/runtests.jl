@@ -1,17 +1,15 @@
 using Algorithm101
-using DataStructure101: BinaryTree, root, value, WeightedAdjacencyMatrix,
-    AdjacencyMatrix, relate!
 using Test
 
 filename = [
-    "mergesort",
-    "quicksort",
-    "binarysearch",
-    "treetraverse",
-    "binarysearchtree",
+    "merge_sort",
+    "quick_sort",
+    "binary_search",
+    "tree_traverse",
+    "binary_search_tree",
     "bfs",
     "dfs",
-    "topologicalsort",
+    "topological_sort",
 ]
 
 for f in filename
