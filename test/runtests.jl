@@ -1,6 +1,3 @@
-using Algorithm101
-using Test
-
 filename = [
     "merge_sort",
     "quick_sort",
