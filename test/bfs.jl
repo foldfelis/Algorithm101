@@ -1,3 +1,8 @@
+using Test
+
+using Algorithm101
+const ALGO = Algorithm101
+
 using DataStructure101
 const DS = DataStructure101
 
@@ -17,10 +22,10 @@ const DS = DataStructure101
     DS.relate!(g, 7, 2)
     DS.relate!(g, 6, 1)
 
-    @test bfs(g, 10) == [10, 8, 9, 4, 5, 6, 7, 1, 2, 3]
+    @test ALGO.bfs(g, 10) == [10, 8, 9, 4, 5, 6, 7, 1, 2, 3]
 
     n = 100
     city = DS.WeightedAdjacencyMatrix{Float64}(n=n, random_g=true)
-    @test bfs(city, 1) == collect(1:100)
+    @test ALGO.bfs(city, 1) == collect(1:100)
 
 end

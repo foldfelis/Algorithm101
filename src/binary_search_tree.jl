@@ -2,7 +2,7 @@ using DataStructure101
 const DS = DataStructure101
 const ALGO = Algorithm101
 
-export find
+export find, bst_maximum, bst_minimum, get_bst_index
 
 key(tn::DS.TreeNode) = tn.index
 
@@ -32,12 +32,12 @@ function close_to(tn::DS.TreeNode{T}, k::Int64) where T
     end
 end
 
-function Base.maximum(bt::DS.BinaryTree)
+function bst_maximum(bt::DS.BinaryTree)
     tn = close_to(DS.root(bt), typemax(Int64))
     return key(tn) => DS.value(tn)
 end
 
-function Base.minimum(bt::DS.BinaryTree)
+function bst_minimum(bt::DS.BinaryTree)
     tn = close_to(DS.root(bt), typemin(Int64))
     return key(tn) => DS.value(tn)
 end
@@ -54,5 +54,5 @@ function Base.insert!(bt::DS.BinaryTree{T}, data::Pair{Int64,T}) where T
     end
 end
 
-Base.getindex(bt::DS.BinaryTree{T}, k::Int) where T = DS.value(ALGO.find(DS.root(bt), k))
-Base.getindex(bt::DS.NullNode, k::Int) where T = ALGO.find(bt, k)
+get_bst_index(bt::DS.BinaryTree{T}, k::Int) where T = DS.value(ALGO.find(DS.root(bt), k))
+get_bst_index(bt::DS.NullNode, k::Int) where T = ALGO.find(bt, k)

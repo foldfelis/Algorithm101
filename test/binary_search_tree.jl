@@ -1,7 +1,11 @@
 using Random
+using Test
+
+using Algorithm101
+const ALGO = Algorithm101
+
 using DataStructure101
 const DS = DataStructure101
-const ALGO = Algorithm101
 
 @testset "Binary Search Tree" begin
 
@@ -25,12 +29,12 @@ const ALGO = Algorithm101
         insert!(bt, index => data[index])
     end
 
-    @test maximum(bt) == (10 => "German")
-    @test minimum(bt) == (1 => "Chinese")
+    @test ALGO.bst_maximum(bt) == (10 => "German")
+    @test ALGO.bst_minimum(bt) == (1 => "Chinese")
     for i in shuffled_index
-        @test bt[i] == data[i]
+        @test ALGO.get_bst_index(bt, i) == data[i]
     end
 
-    @test DS.NullNode()[11] == nothing
+    @test ALGO.get_bst_index(DS.NullNode(), 11) == nothing
 
 end
