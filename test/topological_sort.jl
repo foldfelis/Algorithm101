@@ -1,3 +1,8 @@
+using Test
+
+using Algorithm101
+const ALGO = Algorithm101
+
 using DataStructure101
 const DS = DataStructure101
 
@@ -24,7 +29,7 @@ const DS = DataStructure101
 
     DS.relate!(g, 5, 6)
 
-    @test find_entrances(g) == [1, 5]
-    @test topological_sort(g) == [1, 5, 2, 3, 6, 4]
+    @test ALGO.find_entrances(g) == [1, 5]
+    @test ALGO.topological_sort(g) == [1, 5, 2, 3, 6, 4]
 
 end
