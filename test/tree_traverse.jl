@@ -8,11 +8,11 @@ const DS = DataStructure101
 
 @testset "Tree Traverse" begin
 
-    bt = DS.BinaryTree{Int64}(1)
+    bt = DS.BinaryTree()
     @test bt isa DS.BinaryTree
 
-    for i=2:10
-        push!(bt, i)
+    for i=1:10
+        bt[i] = i
     end
     @test ALGO.pre_order(DS.root(bt)) == [1,2,4,8,9,5,10,3,6,7]
     @test ALGO.in_order(DS.root(bt)) == [8,4,9,2,10,5,1,6,3,7]
