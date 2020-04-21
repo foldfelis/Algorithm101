@@ -4,8 +4,8 @@ filename = [
     "binary_search",
     "tree_traverse",
     # "binary_search_tree",
-    # "bfs",
-    # "dfs",
+    "bfs",
+    "dfs",
     # "topological_sort",
 ]
 

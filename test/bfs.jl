@@ -8,7 +8,7 @@ const DS = DataStructure101
 
 @testset "BFS" begin
 
-    g = DS.AdjacencyMatrix(10)
+    g = DS.Graph(10, :di_matrix)
 
     DS.relate!(g, 10, 9)
     DS.relate!(g, 10, 8)
@@ -25,7 +25,7 @@ const DS = DataStructure101
     @test ALGO.bfs(g, 10) == [10, 8, 9, 4, 5, 6, 7, 1, 2, 3]
 
     n = 100
-    city = DS.WeightedAdjacencyMatrix{Float64}(n=n, random_g=true)
+    city = DS.Graph(100, :w_di_matrix, random=true)
     @test ALGO.bfs(city, 1) == collect(1:100)
 
 end
