@@ -3,10 +3,10 @@ filename = [
     "quick_sort",
     "binary_search",
     "tree_traverse",
-    # "binary_search_tree",
+    "binary_search_tree",
     "bfs",
     "dfs",
-    # "topological_sort",
+    "topological_sort",
 ]
 
 for f in filename
