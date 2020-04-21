@@ -9,7 +9,7 @@ const ALGO = Algorithm101
 
 @testset "Binary Search Tree" begin
 
-    tn = DS.TreeNode{Pair{Int64, String}}(11=>"Demo")
+    tn = DS.TreeNode(11=>"Demo")
 
     @test ALGO.key(tn) == 11
     @test ALGO.value(tn) == "Demo"
@@ -18,8 +18,7 @@ const ALGO = Algorithm101
     @test ALGO.find(tn, 11) == tn
     @test ALGO.find(tn, 12) == nothing
 
-    bst = ALGO.BinarySearchTree{String}()
-    @test eltype(bst) == String
+    bst = ALGO.BinarySearchTree()
     @test length(bst) == 0
 
     push!(bst, 11=>"Demo")
@@ -31,7 +30,8 @@ const ALGO = Algorithm101
     @test maximum(bst) == "Demo"
     @test minimum(bst) == "Demo"
 
-    bst = ALGO.BinarySearchTree{String}(11=>"Demo")
+    bst = ALGO.BinarySearchTree(11=>"Demo")
+    @test eltype(bst) == Pair{Int64,String}
     @test length(bst) == 1
 
     @test ALGO.key(ALGO.root(bst)) == 11
@@ -61,7 +61,7 @@ end
     shuffled_index = Random.shuffle(1:10)
     # shuffled_index = [3,5,1,8,4,9,2,10,6,7]
 
-    bst = ALGO.BinarySearchTree{String}()
+    bst = ALGO.BinarySearchTree()
     for index in shuffled_index
         push!(bst, data[index])
     end
@@ -73,7 +73,7 @@ end
         @test bst[i] == data[i].second
     end
 
-    @test repr(bst) == "BinaryTree{String}(\n\n" *
+    @test repr(bst) == "BinarySearchTree(\n\n" *
         "\t\t\tTreeNode(10 => \"German\")\n\n" *
         "\t\t\t\tTreeNode(9 => \"Japanese\")\n\n" *
         "\t\t\t\t\tTreeNode(8 => \"Russian\")\n\n" *

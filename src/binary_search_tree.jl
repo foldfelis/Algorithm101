@@ -3,11 +3,11 @@ const DS = DataStructure101
 
 export key, value
 
-key(tn::DS.TreeNode{Pair{Int64, T}}) where T = tn.value.first
+key(tn::DS.TreeNode) = tn.value.first
 
-value(tn::DS.TreeNode{Pair{Int64, T}}) where {T} = tn.value.second
+value(tn::DS.TreeNode) = tn.value.second
 
-function find(tn::DS.TreeNode{Pair{Int64, T}}, k::Int64) where T
+function find(tn::DS.TreeNode, k::Int64)
     if k == key(tn)
         return tn
     elseif k < key(tn)
@@ -21,25 +21,22 @@ end
 
 find(tn::DS.NullNode, k::Int64) = nothing
 
-mutable struct BinarySearchTree{T}
+mutable struct BinarySearchTree
     root::DS.AbstractNode
     length::Int
-end
 
-function BinarySearchTree{T}(value::Pair{Int64, T}) where T
-    return BinarySearchTree{T}(DS.TreeNode{Pair{Int64, T}}(value), 1)
+    BinarySearchTree(value::Pair{Int64,<:Any}) = new(DS.TreeNode(value), 1)
+    BinarySearchTree() = new(DS.NullNode(), 0)
 end
-
-BinarySearchTree{T}() where T = BinarySearchTree{T}(DS.NullNode(), 0)
 
 root(bst::BinarySearchTree) = bst.root
 
 Base.length(bst::BinarySearchTree) = bst.length
 
-Base.eltype(bst::BinarySearchTree{T}) where T = T
+Base.eltype(bst::BinarySearchTree) = Base.eltype(bst.root)
 
-function Base.show(io::IO, bst::BinarySearchTree{T}) where T
-    print(io, "BinaryTree{$T}($(DS.tree_repr(root(bst))))")
+function Base.show(io::IO, bst::BinarySearchTree)
+    print(io, "BinarySearchTree($(DS.tree_repr(root(bst))))")
 end
 
 function close_to(tn::DS.TreeNode{Pair{Int64, T}}, k::Int64) where T
@@ -64,8 +61,8 @@ function Base.minimum(bst::BinarySearchTree)
     return value(tn)
 end
 
-function Base.push!(bst::BinarySearchTree{T}, data::Pair{Int64,T}) where T
-    tn = DS.TreeNode{Pair{Int64, T}}(data)
+function Base.push!(bst::BinarySearchTree, data::Pair{Int64,T}) where T
+    tn = DS.TreeNode(data)
 
     if root(bst) isa DS.NullNode
         bst.root = tn
@@ -85,4 +82,4 @@ function Base.push!(bst::BinarySearchTree{T}, data::Pair{Int64,T}) where T
     bst.length += 1
 end
 
-Base.getindex(bst::BinarySearchTree{T}, k::Int) where T = value(find(root(bst), k))
+Base.getindex(bst::BinarySearchTree, k::Int) = value(find(root(bst), k))
