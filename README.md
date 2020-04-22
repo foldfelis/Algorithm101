@@ -6,6 +6,10 @@
 
 ###### tags: `Algorithm101`
 
+This repository is not just an implement yet a learning process to fully understand the algorithms.
+
+In this reop, I implement some common and useful algorithms. Do not expect the implementations to be perfect, but do expect to see code written in haste.
+
 ## Sorting
 
 - [x] Merge sort (100 days: 67)
