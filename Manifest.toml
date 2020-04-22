@@ -5,7 +5,7 @@ uuid = "2a0f44e3-6c83-55bd-87e4-b1978d98bd5f"
 
 [[DataStructure101]]
 deps = ["LinearAlgebra", "Test"]
-git-tree-sha1 = "5890f933611a66e60c1eaf016aa2975f1a7022cf"
+git-tree-sha1 = "6d1e689b877730daaeeea6adabd72865b8a71259"
 repo-rev = "master"
 repo-url = "https://github.com/foldfelis/DataStructure101"
 uuid = "0056bbaa-36c9-436f-bac2-baeddaff1525"
