@@ -17,7 +17,7 @@ const DS = DataStructure101
     #     6 => "Shoes"
     # )
 
-    g = DS.AdjacencyMatrix(6)
+    g = DS.Graph(6, :di_matrix)
 
     DS.relate!(g, 1, 2)
     DS.relate!(g, 1, 3)

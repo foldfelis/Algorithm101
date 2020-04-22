@@ -3,7 +3,7 @@ const DS = DataStructure101
 
 export find_entrances, topological_sort
 
-function calc_in_degree(g::DS.Graph)
+function calc_in_degree(g::DS.AbstractGraph)
     in_degrees = zeros(DS.nv(g))
 
     for v = 1:DS.nv(g)
@@ -15,7 +15,7 @@ function calc_in_degree(g::DS.Graph)
     return in_degrees
 end
 
-function find_entrances(g::DS.Graph)
+function find_entrances(g::DS.AbstractGraph)
     entrances = Int[]
 
     in_degrees = calc_in_degree(g)
@@ -26,7 +26,7 @@ function find_entrances(g::DS.Graph)
     return entrances
 end # function
 
-function topological_sort(g::DS.Graph)
+function topological_sort(g::DS.AbstractGraph)
     sorted = Int[]
     entrances = find_entrances(g)
 

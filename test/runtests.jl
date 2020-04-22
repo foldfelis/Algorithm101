@@ -16,6 +16,5 @@ for f in filename
     println()
     @info teststr
 
-    fname = string(f, ".jl")
-    include(fname)
+    include("$(f).jl")
 end

@@ -12,8 +12,7 @@ module Algorithm101
     ]
 
     for f in filename
-        fname = string(f, ".jl")
-        include(fname)
+        include("$(f).jl")
     end
 
 end # module

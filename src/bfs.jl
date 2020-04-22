@@ -3,7 +3,7 @@ const DS = DataStructure101
 
 export bfs
 
-function bfs(g::DS.Graph, v::Int64)
+function bfs(g::DS.AbstractGraph, v::Int64)
     traversed = Int[]
     queue = Int[]
     push!(queue, v)

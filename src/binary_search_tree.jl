@@ -1,50 +1,72 @@
 using DataStructure101
 const DS = DataStructure101
-const ALGO = Algorithm101
 
-export find, bst_maximum, bst_minimum, get_bst_index
+export key, value
 
-key(tn::DS.TreeNode) = tn.index
+key(tn::DS.TreeNode) = tn.value.first
 
-find(tn::DS.NullNode, k::Int64) = nothing
+value(tn::DS.TreeNode) = tn.value.second
 
-function find(tn::DS.TreeNode{T}, k::Int64) where T
+function find(tn::DS.TreeNode, k::Int64)
     if k == key(tn)
         return tn
     elseif k < key(tn)
-        left = DS.left_child(tn)
-        find(left, k)
+        return find(tn.left, k)
     else
-        right = DS.right_child(tn)
-        find(right, k)
+        return find(tn.right, k)
     end
 end
 
-function close_to(tn::DS.TreeNode{T}, k::Int64) where T
+find(tn::DS.NullNode, k::Int64) = nothing
+
+mutable struct BinarySearchTree
+    root::DS.AbstractNode
+    length::Int
+
+    BinarySearchTree(value::Pair{Int64,<:Any}) = new(DS.TreeNode(value), 1)
+    BinarySearchTree() = new(DS.NullNode(), 0)
+end
+
+root(bst::BinarySearchTree) = bst.root
+
+Base.length(bst::BinarySearchTree) = bst.length
+
+Base.eltype(bst::BinarySearchTree) = Base.eltype(bst.root)
+
+function Base.show(io::IO, bst::BinarySearchTree)
+    print(io, "BinarySearchTree($(DS.tree_repr(root(bst))))")
+end
+
+function close_to(tn::DS.TreeNode{Pair{Int64, T}}, k::Int64) where T
     if k <= key(tn)
-        left = DS.left_child(tn)
-        if left isa DS.NullNode return tn end
-        close_to(left, k)
+        left = tn.left
+        return (left isa DS.NullNode) ? tn : close_to(left, k)
     else
-        right = DS.right_child(tn)
-        if right isa DS.NullNode return tn end
-        close_to(right, k)
+        right = tn.right
+        return (right isa DS.NullNode) ? tn : close_to(right, k)
     end
 end
 
-function bst_maximum(bt::DS.BinaryTree)
-    tn = close_to(DS.root(bt), typemax(Int64))
-    return key(tn) => DS.value(tn)
+function Base.maximum(bst::BinarySearchTree)
+    tn = close_to(root(bst), typemax(Int64))
+    return value(tn)
 end
 
-function bst_minimum(bt::DS.BinaryTree)
-    tn = close_to(DS.root(bt), typemin(Int64))
-    return key(tn) => DS.value(tn)
+function Base.minimum(bst::BinarySearchTree)
+    tn = close_to(root(bst), typemin(Int64))
+    return value(tn)
 end
 
-function Base.insert!(bt::DS.BinaryTree{T}, data::Pair{Int64,T}) where T
-    parent = close_to(DS.root(bt), data.first)
-    tn = DS.TreeNode{T}(data.second, data.first)
+function Base.push!(bst::BinarySearchTree, data::Pair{Int64,T}) where T
+    tn = DS.TreeNode(data)
+
+    if root(bst) isa DS.NullNode
+        bst.root = tn
+        bst.length += 1
+        return
+    end
+
+    parent = close_to(root(bst), data.first)
     tn.parent = parent
 
     if data.first < key(parent)
@@ -52,7 +74,8 @@ function Base.insert!(bt::DS.BinaryTree{T}, data::Pair{Int64,T}) where T
     elseif data.first > key(parent)
         parent.right = tn
     end
+
+    bst.length += 1
 end
 
-get_bst_index(bt::DS.BinaryTree{T}, k::Int) where T = DS.value(ALGO.find(DS.root(bt), k))
-get_bst_index(bt::DS.NullNode, k::Int) where T = ALGO.find(bt, k)
+Base.getindex(bst::BinarySearchTree, k::Int) = value(find(root(bst), k))
