@@ -11,11 +11,9 @@ function find(tn::DS.TreeNode, k::Int64)
     if k == key(tn)
         return tn
     elseif k < key(tn)
-        left = tn.left
-        find(left, k)
+        return find(tn.left, k)
     else
-        right = tn.right
-        find(right, k)
+        return find(tn.right, k)
     end
 end
 
@@ -42,12 +40,10 @@ end
 function close_to(tn::DS.TreeNode{Pair{Int64, T}}, k::Int64) where T
     if k <= key(tn)
         left = tn.left
-        if left isa DS.NullNode return tn end
-        close_to(left, k)
+        return (left isa DS.NullNode) ? tn : close_to(left, k)
     else
         right = tn.right
-        if right isa DS.NullNode return tn end
-        close_to(right, k)
+        return (right isa DS.NullNode) ? tn : close_to(right, k)
     end
 end
 
