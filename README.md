@@ -23,7 +23,7 @@ In this reop, I implement some common and useful algorithms. Do not expect the i
 
 ## Approximation
 
-- [ ] Markov chain Monte Carlo approximate pi (100 days: 09)
+- [x] Monte Carlo integral
 
 ## Dynamic programming
 

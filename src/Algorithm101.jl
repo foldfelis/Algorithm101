@@ -9,6 +9,7 @@ module Algorithm101
         "bfs",
         "dfs",
         "topological_sort",
+        "monte_carlo_integral"
     ]
 
     for f in filename
