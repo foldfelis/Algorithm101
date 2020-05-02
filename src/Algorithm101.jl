@@ -11,6 +11,7 @@ module Algorithm101
         "topological_sort",
         "monte_carlo_integral",
         "mcm",
+        "prims",
     ]
 
     for f in filename
