@@ -7,7 +7,8 @@ filename = [
     "bfs",
     "dfs",
     "topological_sort",
-    "monte_carlo_integral"
+    "monte_carlo_integral",
+    "mcm",
 ]
 
 for f in filename

@@ -12,14 +12,14 @@ In this reop, I implement some common and useful algorithms. Do not expect the i
 
 ## Sorting
 
-- [x] Merge sort (100 days: 67)
-- [x] Quick sort (100 days: 57)
-- [x] Topological sort (100 days: 81)
+- [x] Merge sort
+- [x] Quick sort
+- [x] Topological sort
 
 ## Searching
 
-- [x] Binary search (100 days: 08)
-- [x] Binary search tree (100 days: 45)
+- [x] Binary search
+- [x] Binary search tree
 
 ## Approximation
 
@@ -27,8 +27,8 @@ In this reop, I implement some common and useful algorithms. Do not expect the i
 
 ## Dynamic programming
 
-- [ ] Matrix chain multiplication (100 days: 02)
-- [ ] Longest common subsequence (100 days: 37)
+- [x] Matrix chain multiplication
+- [ ] Longest common subsequence
 
 ## Compression
 
