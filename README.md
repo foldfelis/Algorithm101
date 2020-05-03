@@ -4,7 +4,7 @@
 [![codecov](https://codecov.io/gh/foldfelis/Algorithm101/branch/master/graph/badge.svg?token=PBJZ4JLZ1H)](https://codecov.io/gh/foldfelis/Algorithm101)
 [![Code Style: Blue](https://img.shields.io/badge/code%20style-blue-4495d1.svg)](https://github.com/invenia/BlueStyle)
 
-###### tags: `Algorithm101`
+    ###### tags: `Algorithm101`
 
 This repository is not just an implement yet a learning process to fully understand the algorithms.
 
