@@ -9,7 +9,7 @@ filename = [
     "topological_sort",
     "monte_carlo_integral",
     "mcm",
-    "prims"
+    "mst"
 ]
 
 for f in filename

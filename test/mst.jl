@@ -49,7 +49,7 @@ const ALGO = Algorithm101
     DS.relate!(g_ans, 2, 3, 4)
     DS.relate!(g_ans, 5, 7, 8)
 
-    g = ALGO.prims(g)
+    g = ALGO.mst!(g, algo=:prims)
     @test g.relation == g_ans.relation
     @test g.weight == g_ans.weight
 end
