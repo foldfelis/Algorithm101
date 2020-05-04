@@ -76,7 +76,7 @@ const ALGO = Algorithm101
         DS.relate!(g_ans, 1, 5, 5)
         DS.relate!(g_ans, 5, 7, 8)
 
-        g_kruskals = ALGO.kruskals!(g)
+        g_kruskals = ALGO.mst!(deepcopy(g), algo=:kruskals)
         @test g_kruskals.relation == g_ans.relation
         @test g_kruskals.weight == g_ans.weight
     end

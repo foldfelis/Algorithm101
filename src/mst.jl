@@ -129,5 +129,7 @@ end
 function mst!(g::DS.WeightedAdjacencyList{Int64}; algo::Symbol)
     if algo == :prims
         return prims!(g)
+    elseif algo == :kruskals
+        return kruskals!(g)
     end
 end
