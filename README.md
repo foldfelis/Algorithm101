@@ -34,7 +34,7 @@ In this reop, I implement some common and useful algorithms. Do not expect the i
 
 ## Tree
 
-- [ ] Kruskal's algorithm (Minimum spanning tree)
+- [x] Kruskal's algorithm (Minimum spanning tree)
 - [x] Prim's algorithm (Minimum spanning tree)
 - [x] Tree traverse: pre-order, in-order, post-order
 - [ ] JSON Parser
