@@ -97,10 +97,10 @@ function bubble_insert!(edges::Vector{Edge}, edge::Edge)
 end
 
 function kruskals!(g::DS.WeightedAdjacencyList{Int64})
-    subset = DS.DisjointSet(DS.nv(g))
+    forest = DS.DisjointSet(DS.nv(g))
     edges = Edge[]
 
-    # loop over all vertexes
+    # loop over all vertices
     for vertex in 1:(DS.nv(g))
         # loop over all neighbor
         neighbors = DS.neighbor(g, vertex)
@@ -117,8 +117,8 @@ function kruskals!(g::DS.WeightedAdjacencyList{Int64})
     for edge in edges
         v1 = edge.vertex[1]
         v2 = edge.vertex[2]
-        if DS.find(subset, v1) != DS.find(subset, v2)
-            DS.union!(subset, v1, v2)
+        if DS.find(forest, v1) != DS.find(forest, v2)
+            DS.union!(forest, v1, v2)
             DS.relate!(g, v1, v2, edge.weight)
         end
     end
