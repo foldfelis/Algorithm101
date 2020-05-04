@@ -88,17 +88,17 @@ struct Edge
     weight::Number
 end
 
-function Base.push!(edges::Vector{Edge}, edge::Edge)
+function bubble_insert!(edges::Vector{Edge}, edge::Edge)
     len = length(edges)
     for i in 1:len
         (edges[i].weight > edge.weight) && (insert!(edges, i, edge); return)
     end
-    insert!(edges, len+1, edge)
+    push!(edges, edge)
 end
 
 function kruskals!(g::DS.WeightedAdjacencyList{Int64})
     subset = DS.DisjointSet(DS.nv(g))
-    edges::Vector{Edge} = []
+    edges = Edge[]
 
     # loop over all vertexes
     for vertex in 1:(DS.nv(g))
@@ -107,7 +107,7 @@ function kruskals!(g::DS.WeightedAdjacencyList{Int64})
         while length(neighbors) > 0
             neighbor = neighbors[1]
             # 1. push weight into sorted array
-            push!(edges, Edge((vertex, neighbor), g.weight[vertex][1]))
+            bubble_insert!(edges, Edge((vertex, neighbor), g.weight[vertex][1]))
             # 2. unrelate edges
             DS.unrelate!(g, vertex, neighbor)
         end
