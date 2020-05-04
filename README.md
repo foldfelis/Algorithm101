@@ -21,6 +21,7 @@ In this reop, I implement some common and useful algorithms.
 ## Approximation
 
 - [x] Monte Carlo integral
+- [ ] Metropolis–Hastings algorithm approximate Gamma(k=2.0,theta=2.0)
 
 ## Dynamic programming
 
