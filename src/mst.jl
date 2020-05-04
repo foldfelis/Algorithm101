@@ -1,12 +1,7 @@
 using DataStructure101
 const DS = DataStructure101
 
-export prims!, mst!
-
-# struct Edge
-#     vertex::Tuple{Int, Int}
-#     weight::Float64
-# end
+export prims!, kruskals!, mst!
 
 """
     prims(graph::DS.WeightedAdjacencyList{Float64})
@@ -88,8 +83,53 @@ function prims!(g::DS.WeightedAdjacencyList{Int64})
     return g
 end
 
+struct Edge
+    vertex::Tuple{Int, Int}
+    weight::Number
+end
+
+function bubble_insert!(edges::Vector{Edge}, edge::Edge)
+    len = length(edges)
+    for i in 1:len
+        (edges[i].weight > edge.weight) && (insert!(edges, i, edge); return)
+    end
+    push!(edges, edge)
+end
+
+function kruskals!(g::DS.WeightedAdjacencyList{Int64})
+    forest = DS.DisjointSet(DS.nv(g))
+    edges = Edge[]
+
+    # loop over all vertices
+    for vertex in 1:(DS.nv(g))
+        # loop over all neighbor
+        neighbors = DS.neighbor(g, vertex)
+        while length(neighbors) > 0
+            neighbor = neighbors[1]
+            # 1. push weight into sorted array
+            bubble_insert!(edges, Edge((vertex, neighbor), g.weight[vertex][1]))
+            # 2. unrelate edges
+            DS.unrelate!(g, vertex, neighbor)
+        end
+    end
+
+    # loop over all sorted edges
+    for edge in edges
+        v1 = edge.vertex[1]
+        v2 = edge.vertex[2]
+        if DS.find(forest, v1) != DS.find(forest, v2)
+            DS.union!(forest, v1, v2)
+            DS.relate!(g, v1, v2, edge.weight)
+        end
+    end
+
+    return g
+end
+
 function mst!(g::DS.WeightedAdjacencyList{Int64}; algo::Symbol)
     if algo == :prims
         return prims!(g)
+    elseif algo == :kruskals
+        return kruskals!(g)
     end
 end
