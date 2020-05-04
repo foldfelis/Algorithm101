@@ -1,12 +1,7 @@
 using DataStructure101
 const DS = DataStructure101
 
-export prims!, mst!
-
-# struct Edge
-#     vertex::Tuple{Int, Int}
-#     weight::Float64
-# end
+export prims!, kruskals!, mst!
 
 """
     prims(graph::DS.WeightedAdjacencyList{Float64})
@@ -82,6 +77,49 @@ function prims!(g::DS.WeightedAdjacencyList{Int64})
             DS.relate!(g, edge[1], edge[2], weight)
             push!(intree, edge[2])
             break
+        end
+    end
+
+    return g
+end
+
+struct Edge
+    vertex::Tuple{Int, Int}
+    weight::Number
+end
+
+function Base.push!(edges::Vector{Edge}, edge::Edge)
+    len = length(edges)
+    for i in 1:len
+        (edges[i].weight > edge.weight) && (insert!(edges, i, edge); return)
+    end
+    insert!(edges, len+1, edge)
+end
+
+function kruskals!(g::DS.WeightedAdjacencyList{Int64})
+    subset = DS.DisjointSet(DS.nv(g))
+    edges::Vector{Edge} = []
+
+    # loop over all vertexes
+    for vertex in 1:(DS.nv(g))
+        # loop over all neighbor
+        neighbors = DS.neighbor(g, vertex)
+        while length(neighbors) > 0
+            neighbor = neighbors[1]
+            # 1. push weight into sorted array
+            push!(edges, Edge((vertex, neighbor), g.weight[vertex][1]))
+            # 2. unrelate edges
+            DS.unrelate!(g, vertex, neighbor)
+        end
+    end
+
+    # loop over all sorted edges
+    for edge in edges
+        v1 = edge.vertex[1]
+        v2 = edge.vertex[2]
+        if DS.find(subset, v1) != DS.find(subset, v2)
+            DS.union!(subset, v1, v2)
+            DS.relate!(g, v1, v2, edge.weight)
         end
     end
 
