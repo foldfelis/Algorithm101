@@ -61,9 +61,3 @@ In this reop, I implement some common and useful algorithms.
 - [ ] Principle component analysis (100 days: 92)
 - [ ] Naive Bayes classifier
 - [ ] Decision tree classifier (ID3)
-
-## Applications
-
-- [ ] POS system
-- [ ] Interpreter for arithmetics
-- [ ] MVC pattern for machine learning platform
