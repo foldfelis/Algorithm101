@@ -1,4 +1,4 @@
-export quick_sort!
+export quick_sort!, hoare_qsort!
 
 function quick_sort!(arr::Vector, h::Int64, t::Int64)
     len = t-h+1
