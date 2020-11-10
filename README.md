@@ -7,6 +7,10 @@
 This repository is not just an implement yet a learning process to fully understand the algorithms.
 In this reop, I implement some common and useful algorithms.
 
+## Divide and conquer
+
+- [x] Find max subarray
+
 ## Sorting
 
 - [x] Merge sort
