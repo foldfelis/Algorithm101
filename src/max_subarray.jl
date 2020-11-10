@@ -82,9 +82,5 @@ function iterative_find_max_subarray(arr::Vector)
         end
     end
 
-    if max_sum > sum
-        return (max_i, max_j, max_sum)
-    else
-        return (sum_i, n, sum)
-    end
+    return (max_i, max_j, max_sum)
 end
