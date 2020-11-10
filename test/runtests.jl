@@ -1,4 +1,5 @@
 filename = [
+    "max_subarray",
     "merge_sort",
     "quick_sort",
     "binary_search",
