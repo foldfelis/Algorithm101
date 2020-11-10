@@ -1,4 +1,4 @@
-export find_max_sunarray
+export find_max_sunarray, iterative_find_max_subarray
 
 #=
 #                   Case III
@@ -54,5 +54,37 @@ function find_max_subarray(arr::Vector, p::Int64, r::Int64)
         return (i2, j2, s2)
     else
         return (i3, j3, s3)
+    end
+end
+
+#=
+# [][][i][][][][][][][][][j][j+1][][][]
+# <----either this range--->
+#     <----- or this range ----->
+=#
+
+function iterative_find_max_subarray(arr::Vector)
+    n = length(arr)
+
+    max_sum = -Inf
+    max_i = max_j = 0
+    sum = 0
+    sum_i = 1
+
+    for j=1:n
+        sum += arr[j]
+        if sum > max_sum
+            max_i = sum_i; max_j = j
+            max_sum = sum
+        elseif sum < 0
+            sum = 0
+            sum_i = j+1
+        end
+    end
+
+    if max_sum > sum
+        return (max_i, max_j, max_sum)
+    else
+        return (sum_i, n, sum)
     end
 end
