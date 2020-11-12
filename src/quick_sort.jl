@@ -33,13 +33,13 @@ function hoare_qsort!(arr::Vector, p::Int64, r::Int64)
     i = p - 1
     j = r + 1
     while true
-        j -= 1
-        while arr[j] > x
+        while true
             j -= 1
+            arr[j] > x || break
         end
-        i += 1
-        while arr[i] < x
+        while true
             i += 1
+            arr[i] < x || break
         end
 
         if i < j
