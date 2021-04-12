@@ -1,6 +1,6 @@
 # Algorithm101
 
-[![Build Status](https://travis-ci.com/foldfelis/Algorithm101.svg?token=sCvSBz8RcnVXPVQx1yrZ&branch=master)](https://travis-ci.com/foldfelis/Algorithm101)
+[![CI](https://github.com/foldfelis/Algorithm101/actions/workflows/ci.yml/badge.svg)](https://github.com/foldfelis/Algorithm101/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/foldfelis/Algorithm101/branch/master/graph/badge.svg?token=PBJZ4JLZ1H)](https://codecov.io/gh/foldfelis/Algorithm101)
 [![Code Style: Blue](https://img.shields.io/badge/code%20style-blue-4495d1.svg)](https://github.com/invenia/BlueStyle)
 
